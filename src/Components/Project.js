@@ -12,18 +12,21 @@ export const Projects = () => {
   const projects = [
     {
       title: "AI Image Generator",
-      description: "",
+      description: "Clone of Open AI : DALL-E , AI Image Generator",
       imgUrl: projImg1,
+      url:"/",
     },
     {
       title: "Chat GPT Clone",
-      description: "",
+      description: "Clone of Open AI Chat GPT",
       imgUrl: projImg2,
+      url:"/",
     },
     {
       title: "Car Dekho",
-      description: "",
+      description: "A Car Buying Application (Note:-> Prices are not real , they are auto generated)",
       imgUrl: projImg3,
+      url:"https://project-car-dekho-manvi-grover.vercel.app/",
     },
     
   ];
@@ -35,7 +38,7 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+              <div className={isVisible ? "animate_animated animate_fadeIn": ""}>
                 <h2>Projects</h2>
                 <p>Click To Explore the Projects</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -50,7 +53,7 @@ export const Projects = () => {
                       <Nav.Link eventKey="third">Tab 3</Nav.Link>
                     </Nav.Item>
                   </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                  <Tab.Content id="slideInUp" className={isVisible ? "animate_animated animate_slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
