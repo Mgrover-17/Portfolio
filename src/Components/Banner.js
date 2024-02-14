@@ -57,7 +57,7 @@ export const Banner = () => {
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                 <span className="tagline">Welcome to my Portfolio</span>
                 <h1>{`Hi! I'm Manvi Grover`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer"]'><span className="wrap">{text}</span></span></h1>
-                  <p>Hey! I'm Manvi Grover, I am Full Stack Developer from India . I am a dediacted to the quest of developing solution that leverage on best practice technologies to deliver over the top user experience . I have Created Clone of Chat Gpt and DALL-E of Open AI, a AI Image Generator and looking forward to work on 3JS and Web3.</p>
+                  <p>Hey! I'm Manvi Grover, I am Full Stack Developer from India . I am a dedicated to the quest of developing solution that leverage on best practice technologies to deliver over the top user experience . Till Now, I have worked on MERN Stack projects such as Book Store, LMS, Car Dekho and currently working on Advanced Full Stack Specialization.</p>
                   <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
               </div>}
             </TrackVisibility>

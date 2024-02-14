@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -17,10 +18,10 @@ export const Projects = () => {
       url:"/",
     },
     {
-      title: "Chat GPT Clone",
-      description: "Clone of Open AI Chat GPT",
+        title: "Learning Management System",
+        description: "A comprehensive platform designed to streamline the process of online learning.",
       imgUrl: projImg2,
-      url:"/",
+      url:"https://lms-client-drab.vercel.app/",
     },
     {
       title: "Car Dekho",
@@ -29,7 +30,18 @@ export const Projects = () => {
       url:"https://project-car-dekho-manvi-grover.vercel.app/",
     },
     
+    
   ];
+
+  const projects2 = [
+    {
+      title:"Book Store",
+      description:"An online bookstore platform offering wide selection of books across genres.",
+      imgUrl: projImg4,
+      url:"https://book-search-api.vercel.app/",
+    }
+  ];
+
 
   return (
     <section className="project" id="project">
@@ -69,7 +81,18 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <p>Projects</p>
+                    <Row>
+                        {
+                          projects2.map((project, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...project}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <p>Projects</p>
