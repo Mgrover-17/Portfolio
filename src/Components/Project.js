@@ -1,10 +1,12 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
-import projImg4 from "../assets/img/project-img4.png";
+import AIimage from "../assets/img/AIimage.png";
+import lms from "../assets/img/lms.png";
+import carDekho from "../assets/img/carDekho.png";
+import bookStore from "../assets/img/BookHub.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
+import TechStar from "../assets/img/TechStars.jpg"
+import jobPortral from "../assets/img/jobPortral.png"
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -14,22 +16,21 @@ export const Projects = () => {
     {
       title: "AI Image Generator",
       description: "Clone of Open AI : DALL-E , AI Image Generator",
-      imgUrl: projImg1,
+      imgUrl: AIimage,
       url:"/",
     },
     {
         title: "Learning Management System",
         description: "A comprehensive platform designed to streamline the process of online learning.",
-      imgUrl: projImg2,
+      imgUrl: lms,
       url:"https://lms-client-drab.vercel.app/",
     },
     {
       title: "Car Dekho",
       description: "A Car Buying Application (Note:-> Prices are not real , they are auto generated)",
-      imgUrl: projImg3,
+      imgUrl: carDekho,
       url:"https://project-car-dekho-manvi-grover.vercel.app/",
     },
-    
     
   ];
 
@@ -37,10 +38,26 @@ export const Projects = () => {
     {
       title:"Book Store",
       description:"An online bookstore platform offering wide selection of books across genres.",
-      imgUrl: projImg4,
+      imgUrl: bookStore,
       url:"https://book-search-api.vercel.app/",
-    }
+    },
+    {
+      title: "Job Portral",
+      description: "Job Portal Using HTML,CSS and PHP",
+      imgUrl:jobPortral,
+      url:"https://github.com/Mgrover-17/Job-Portral-Project",
+},
   ];
+
+
+  const Achievements = [
+    {
+      title: "TechStars Startup Weekend",
+      description: "Got 3rd Prize in TechStars Startup Weekend Women Chandigarh",
+      imgUrl: TechStar,
+      url:"https://www.linkedin.com/posts/manvi-grover-60305623b_keeplearning-techstars-googleforstartups-activity-6976894220724776960-osCw?utm_source=share&utm_medium=member_desktop",
+},
+];
 
 
   return (
@@ -50,8 +67,8 @@ export const Projects = () => {
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className={isVisible ? "animate_animated animate_fadeIn": ""}>
-                <h2>Projects</h2>
+              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+                <h2>Projects and Achievements</h2>
                 <p>Click To Explore the Projects</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
@@ -62,10 +79,10 @@ export const Projects = () => {
                       <Nav.Link eventKey="second">Tab 2</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
+                      <Nav.Link eventKey="third">Achievements</Nav.Link>
                     </Nav.Item>
                   </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate_animated animate_slideInUp" : ""}>
+                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
@@ -95,7 +112,18 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Projects</p>
+                    <Row>
+                        {
+                          Achievements.map((ach, index) => {
+                            return (
+                              <ProjectCard
+                                key={index}
+                                {...ach}
+                                />
+                            )
+                          })
+                        }
+                      </Row>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
@@ -104,6 +132,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <image className="background-image-right" src={colorSharp2}></image>
+      <img className="background-image-right" src={colorSharp2}></img>
     </section>
   )}

@@ -65,9 +65,9 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated apxnimate__zoomIn" : ""}>
+               <div className={isVisible ? "animate__animated apxnimate__zoomIn" : ""}>
                   <img src={MyImg} style={{borderRadius:'50px',width :'50%',marginLeft:'30%'}} alt="My Img"/>
-                </div>}
+                </div>} 
             </TrackVisibility>
           </Col>
         </Row>
